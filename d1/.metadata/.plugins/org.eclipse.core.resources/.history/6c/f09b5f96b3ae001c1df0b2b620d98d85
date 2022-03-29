@@ -1,0 +1,21 @@
+package manageemployees;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+public class EmployeeOperationsImpl implements EmployeeOperations {
+	private String fileName = "C:/TEMP/james.dat";	//Configuration Data
+	
+	@Override
+	public void writeObject(Employee obj) {
+		try {
+			FileOutputStream fos = new FileOutputStream(fileName);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(obj);
+			oos.close();
+			fos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

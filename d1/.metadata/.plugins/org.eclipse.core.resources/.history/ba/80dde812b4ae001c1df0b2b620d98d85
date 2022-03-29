@@ -1,0 +1,20 @@
+package manageemployees;
+
+public class MainClass {
+	public static void  main(String args[]) {
+		try {
+			//Supporting Logic
+			OperationsConfiguration config = new OperationsConfiguration();
+			config.setFileName("C:/TEMP/james.dat");
+			EmployeeOperationsImpl operations = new EmployeeOperationsImpl();
+			operations.setConfig(config);
+			
+			//Business Logic
+			Employee james = new Employee(100, "James Cooper");
+			operations.writeObject(james);
+			System.out.println("Object written to file...");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,14 @@
+package manageemployees;
+
+public class MainClass {
+	public static void  main(String args[]) {
+		try {
+			EmployeeOperations operations = new EmployeeOperationsImpl();
+			Employee james = new Employee(100, "James Cooper");
+			operations.writeObject(james);
+			System.out.println("Object written to file...");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

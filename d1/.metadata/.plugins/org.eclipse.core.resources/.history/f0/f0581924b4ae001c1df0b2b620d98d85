@@ -1,0 +1,17 @@
+package manageemployees;
+
+public class MainClass {
+	public static void  main(String args[]) {
+		try {
+			//Supporting Logic
+			config.setFileName("C:/TEMP/james.dat");
+			
+			//Business Logic
+			Employee james = new Employee(100, "James Cooper");
+			operations.writeObject(james);
+			System.out.println("Object written to file...");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
